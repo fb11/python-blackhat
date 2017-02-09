@@ -129,9 +129,9 @@ def client_sender(buffer):
 def server_loop():
     global target
 
-    # if no target is defined, we listen on all interfaces
+    # if no target is defined, we listen on local loopback
     if not len(target):
-        target = "0.0.0.0"
+        target = "127.0.0.1"
 
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((target, port))
