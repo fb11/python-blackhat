@@ -1,8 +1,9 @@
 import socket
 import os
+import struct
 
 # host to lisen on
-host = "0.0.0.0"
+host = "192.168.244.129"
 
 # create a raw socket and bind it to the public interface
 if os.name == "nt":
@@ -23,8 +24,8 @@ if os.name == "nt":
     sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_ON)
 
 # read in a single packet
-print sniffer.recvrom(65565)
+print sniffer.recvfrom(65565)
 
 # if we're using Winows, turn off promiscuous mode
-if os.name = "nt":
+if os.name == "nt":
     sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_OFF)
