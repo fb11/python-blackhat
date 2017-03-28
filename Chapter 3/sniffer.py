@@ -2,7 +2,7 @@ import socket
 import os
 
 # host to lisen on
-host = 0.0.0.0
+host = "0.0.0.0"
 
 # create a raw socket and bind it to the public interface
 if os.name == "nt":
